@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-  <title>Document</title>
+  <title>Javascript Day 2</title>
 </head>
 <body>
   <script>
@@ -17,6 +17,41 @@
     } else {
       alert('Odd number!')
     }
+
+    // LOOPS & ITERATORS
+    
+    // have for loop loop through modulus 6x
+    for ( let i=0; i<6; i++) {
+      
+      let num = parseInt(prompt('Pick a number'))
+
+      if (num % 2 === 0) {
+        alert('Number is even!')
+      } else {
+        alert('Odd number!')
+      }
+
+    }
+
+    // could write the above using a ternary
+    for (let i = 0; i < 6; i++) {
+
+      let num = parseInt(prompt('Pick a number'))
+
+      num % 2 === 0 ? alert('Number is even!') : alert ('Number is odd')
+
+      }
+
+
+    // have code run 20 times
+    for (let i=0; i<20; i++){
+      console.log(i)
+    }
+
+ 
+    
+    
+
 
   </script>
   
