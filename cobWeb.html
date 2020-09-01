@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Cob Web</title>
+</head>
+<body>
+  <script>
+
+   let theCobWeb= {
+    biggestWeb:{
+      item:'comb',
+      biggerWeb:{
+        items:['glasses', 'paperclip', 'bubblegum'],
+        smallerWeb: {
+          item: 'toothbrush',
+          tinyWeb: {
+            items:['toenails', 'lint', 'wrapper', 'homework']
+          }
+        }
+      },
+      otherBigWeb: {
+        item:'headphones'
+      }
+    }
+   }
+   // Create the code necessary to print each of the following objects above:
+    //'I found my glasses!'
+    console.log(`I found my ${theCobWeb.biggestWeb.biggerWeb.items[0]}`)
+
+    //'I found my toothbrush!'
+    console.log(`I found my ${theCobWeb.biggestWeb.biggerWeb.smallerWeb.item}`)
+
+    //'I found my headphones!'
+    console.log(`I found my ${theCobWeb.biggestWeb.otherBigWeb.item}`)
+
+   //'I found my homework '
+   console.log(`I found my ${theCobWeb.biggestWeb.biggerWeb.smallerWeb.tinyWeb.items[3]}`)
+  </script>
+  
+</body>
+</html>
