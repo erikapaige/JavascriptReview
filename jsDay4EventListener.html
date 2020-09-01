@@ -10,13 +10,82 @@
   <!-- Making BTN clickable -->
   <button id="myBtn">Click Me</button>
 
+  <hr>
+  <h4>Activity, make buttons that alerts the user to each animal's sound using Inner HTML & Event Listeners</h4>
+  <div id="animalBtns"></div>
+  
+  
   <script>
 
     // Making button clickable 
-    // this is the event and this is the instructions to add
-    document.getElementById('myBtn').addEventListener('click', () => {
-      console.log('ping')
+    // this is the event and this is the instructions to run
+    let animals = [
+      {
+        name: 'chicken',
+        cool: false,
+        sound: 'cluck',
+      },
+      {
+        name: 'cow',
+        cool: false,
+        sound: 'moo',
+      },
+      {
+        name: 'cat',
+        cool: true,
+        sound: 'meow',
+      },
+      {
+        name: 'dog',
+        cool: true,
+        sound:'woof'
+      },
+      {
+        name: 'bird',
+        cool: false,
+        sound: 'chirp',
+      }
+    ]
+    
+    for (i = 0; i < animals.length; i++) {
+      // console.log(animals)
+
+      // create buttons
+      let btnElem = document.createElement('button')
+      // give them a class name in common
+      btnElem.className = 'animal'
+      // loop through animals grab name
+      btnElem.textContent = animals[i].name
+      // adding data-attributes
+      btnElem.dataset.index = i
+      // append btn element to div
+      document.getElementById('animalBtns').append(btnElem)
+    }
+
+    // add event listener for dynamically added elements
+    // add event listener to WHOLE document so trigger all logic
+    // parameter is event because it is information about event listened to
+    document.addEventListener('click', (event) => {
+      // console.log(event.target)
+
+      // make sure whatever is clicked has class name of animal
+      if (event.target.className === 'animal') {
+        // when click will show you index of each animal
+        console.log(event.target.dataset.index)
+
+        // index animals directly
+        let animal = animals[event.target.dataset.index]
+        alert(`
+          Name: ${animal.name}
+          Cool: ${animal.cool}
+          sound:${animal.sound}
+        `)
+        
+      }
     })
+
+  
+
 
   </script>
 </body>
