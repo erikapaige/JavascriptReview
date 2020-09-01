@@ -8,14 +8,38 @@
 <body>
 
   <div>
+
     <h1>Title</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum suscipit exercitationem aliquam sed laboriosam laudantium voluptatum. Ipsa, cupiditate assumenda asperiores doloremque temporibus quia amet aspernatur voluptatem earum aliquam, magnam incidunt. <span>Created By me</span></p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum suscipit exercitationem aliquam sed laboriosam laudantium voluptatum. Ipsa, cupiditate assumenda asperiores doloremque temporibus quia amet aspernatur voluptatem earum aliquam, magnam incidunt. <span id="mySpan">Created By me</span></p>
+
   </div>
+
+  <div id="myDiv"> </div>
+
+
+  <!-- Javascript -->
   <script>
     //the body of the document has children, each element is made up of children
     // use dot notation to step into the children
     // console.log the span
     console.log(document.body.children[0].children[1].children[0])
+
+    //parent element will give you whatever it is contained by
+    console.log(document.body.parentElement)
+
+    // INSTEAD OF STEPPING THROUGH CHILDREN, give each item identifiers so can easily call it (aka selectors via IDs)
+    console.log(document.getElementById('mySpan'))
+    // want to only see text in mySpan use .textContent
+    console.log(document.getElementById('mySpan').textContent)
+    // change what textContent is 
+    console.log(document.getElementById('mySpan').textContent = 'Something Else')
+
+    // alter HTML itself using javascript, has to be in string format
+    document.getElementById('myDiv').innerHTML = 
+    `
+    <h1> Title </h1>
+    <button>Test Button </button>
+    `
   </script>
   
 </body>
