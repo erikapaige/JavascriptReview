@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Dom</title>
+</head>
+<body>
+
+  <div>
+    <h1>Title</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum suscipit exercitationem aliquam sed laboriosam laudantium voluptatum. Ipsa, cupiditate assumenda asperiores doloremque temporibus quia amet aspernatur voluptatem earum aliquam, magnam incidunt. <span>Created By me</span></p>
+  </div>
+  <script>
+    //the body of the document has children, each element is made up of children
+    // use dot notation to step into the children
+    // console.log the span
+    console.log(document.body.children[0].children[1].children[0])
+  </script>
+  
+</body>
+</html>
