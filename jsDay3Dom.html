@@ -1,22 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <title>The Dom</title>
 </head>
+
 <body>
 
   <div>
 
     <h1>Title: Manipulating the DOM</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum suscipit exercitationem aliquam sed laboriosam laudantium voluptatum. Ipsa, cupiditate assumenda asperiores doloremque temporibus quia amet aspernatur voluptatem earum aliquam, magnam incidunt. <span id="mySpan">Created By me</span></p>
+    <p>This is a practice page, alterting the document. It is not styled or formatted. It is simply for javascript practice. <span id="mySpan">Created By me</span></p>
 
   </div>
   <hr>
+  <!-- Div with Inner HTML h1 & button tags -->
   <div id="myDiv"> </div>
   <hr>
-  <div id="userDiv"></div>
+  <!-- Div not using JSON stringify -->
+  <h4>Example of altering innerHTML without using JSON.stringify</h4>
+  <div id="userDiv1"></div>
+  <hr>
+  <!-- Div using JSON stringify -->
+  <h4>Example of altering innerHTML with JSON.stringify</h4>
+  <div id="userDiv2"></div>
+  <hr>
+  <h4>Example of altering innerHTML with JSON.stringify & Adding Bootstrap</h4>
+  <div id="userDiv3"></div>
+
+
+  <!-- Bootstrap Script Tags / CDNs -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
 
   <!-- Javascript -->
   <script>
@@ -37,8 +64,8 @@
     console.log(document.getElementById('mySpan').textContent = 'Something Else')
 
     // alter HTML itself using javascript, has to be in string format
-    document.getElementById('myDiv').innerHTML = 
-    `
+    document.getElementById('myDiv').innerHTML =
+      `
     <h1> Inner HTML Test </h1>
     <button>Test Button</button>
     `
@@ -52,9 +79,31 @@
     }
 
     // want to show user object as text content for userDiv element
-    document.getElementById('userDiv').textContent = JSON.stringify(user)
+    document.getElementById('userDiv1').textContent = JSON.stringify(user)
+
+    // better way than above, to provide formatting
+    document.getElementById('userDiv2').innerHTML = `
+      <h1>Name: ${user.name} </h1>
+      <h2>Email: ${user.email}</h2>
+      <h3>Username: ${user.username}</h3>
+      <h4>Password: ${user.password}</h4>
+    `
+
+    // userDiv3, using Bootstrap styling
+    document.getElementById('userDiv3').innerHTML = `
+    <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+      <div class="card-header"> Username: ${user.username}</div>
+        <div class="card-body">
+        <h5 class="card-title">Name: ${user.name}</h5>
+        <p class="card-text">
+        Email: ${user.email}
+        Password: ${user.password}</p>
+      </div>
+    </div>
+    `
 
   </script>
-  
+
 </body>
+
 </html>
