@@ -9,13 +9,14 @@
 
   <div>
 
-    <h1>Title</h1>
+    <h1>Title: Manipulating the DOM</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum suscipit exercitationem aliquam sed laboriosam laudantium voluptatum. Ipsa, cupiditate assumenda asperiores doloremque temporibus quia amet aspernatur voluptatem earum aliquam, magnam incidunt. <span id="mySpan">Created By me</span></p>
 
   </div>
-
+  <hr>
   <div id="myDiv"> </div>
-
+  <hr>
+  <div id="userDiv"></div>
 
   <!-- Javascript -->
   <script>
@@ -27,6 +28,7 @@
     //parent element will give you whatever it is contained by
     console.log(document.body.parentElement)
 
+    // THE DOM
     // INSTEAD OF STEPPING THROUGH CHILDREN, give each item identifiers so can easily call it (aka selectors via IDs)
     console.log(document.getElementById('mySpan'))
     // want to only see text in mySpan use .textContent
@@ -37,9 +39,21 @@
     // alter HTML itself using javascript, has to be in string format
     document.getElementById('myDiv').innerHTML = 
     `
-    <h1> Title </h1>
-    <button>Test Button </button>
+    <h1> Inner HTML Test </h1>
+    <button>Test Button</button>
     `
+
+    // take info from user object and place into div
+    let user = {
+      name: 'John Doe',
+      email: 'johndoe@gmail.com',
+      username: 'johndoe',
+      password: 'password1234'
+    }
+
+    // want to show user object as text content for userDiv element
+    document.getElementById('userDiv').textContent = JSON.stringify(user)
+
   </script>
   
 </body>
