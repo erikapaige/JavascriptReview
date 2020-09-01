@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects & Scope</title>
+</head>
+<body>
+
+<script>
+
+  let dog = {
+    name: 'Beef',
+    age: 2, 
+    breed: 'Chihuahua'
+  }
+  console.log(dog)
+
+  let obj = {
+    str: 'hello object world!',
+    num: 54,
+    bool: true,
+    arr: [1, 2, 3, 4],
+    small: {
+      name: 'Small Object in an object',
+      age: 56,
+    },
+    myFunctionOne () {
+      console.log('function in an object')
+    }
+  }
+  // deriving individual pieces of object, dot notation
+  console.log(obj.str)
+  console.log(obj.arr)
+  // how to grab specific item in array, want 3
+  console.log(obj.arr[2])
+  // wanted object
+  console.log(obj.small)
+  // want just name off object
+  console.log(obj.small.name)
+  // call function from the object
+  obj.myFunctionOne()
+
+//SCOPE
+  // example of global variable
+  let str = 'hello world'
+  
+  // global vars can be called in functions
+  const myFunction = () => {
+    console.log(str)
+  }
+  myFunction()
+
+  // global vars available in conditional logic
+  if (5 > 3) {
+    console.log(str)
+  }
+  // global vars available in loops
+  for (let i = 0; i < 5; i++){
+    console.log(str)
+  }
+
+  // local variables, 'functional scope' create a function that is a variable that only belongs to function written in
+  const funct = () => {
+    let str = 'hello function'
+    console.log(str)
+  }
+  funct()
+
+  const adder = (x,y) => {
+    console.log( x + y)
+  }
+
+  const wrapper = () => {
+    adder(5, 7)
+  }
+
+  wrapper()
+
+</script>
+
+</body>
+</html>
