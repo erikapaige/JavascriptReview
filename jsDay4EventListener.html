@@ -21,29 +21,29 @@
     // this is the event and this is the instructions to run
     let animals = [
       {
-        name: 'chicken',
+        name: 'Chicken',
         cool: false,
-        sound: 'cluck',
+        sound: 'Cluck',
       },
       {
-        name: 'cow',
+        name: 'Cow',
         cool: false,
-        sound: 'moo',
+        sound: 'Moo',
       },
       {
-        name: 'cat',
+        name: 'Cat',
         cool: true,
-        sound: 'meow',
+        sound: 'Meow',
       },
       {
-        name: 'dog',
+        name: 'Dog',
         cool: true,
-        sound:'woof'
+        sound:'Woof'
       },
       {
-        name: 'bird',
+        name: 'Bird',
         cool: false,
-        sound: 'chirp',
+        sound: 'Chirp',
       }
     ]
     
@@ -73,14 +73,13 @@
         // when click will show you index of each animal
         console.log(event.target.dataset.index)
 
-        // index animals directly
+        // index animals directly by setting them equal to a variable
         let animal = animals[event.target.dataset.index]
         alert(`
           Name: ${animal.name}
           Cool: ${animal.cool}
-          sound:${animal.sound}
-        `)
-        
+          Sound: ${animal.sound}
+        `)   
       }
     })
 
