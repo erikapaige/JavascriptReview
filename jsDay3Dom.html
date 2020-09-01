@@ -11,27 +11,39 @@
 </head>
 
 <body>
-
+  <!-- First Div used to Alter Dom -->
   <div>
-
     <h1>Title: Manipulating the DOM</h1>
-    <p>This is a practice page, alterting the document. It is not styled or formatted. It is simply for javascript practice. <span id="mySpan">Created By me</span></p>
-
+    <p>This is a practice page, altering the document. It is not styled or formatted. It is simply for javascript practice. <span id="mySpan">Created By me</span></p>
   </div>
+
   <hr>
+
   <!-- Div with Inner HTML h1 & button tags -->
   <div id="myDiv"> </div>
+
   <hr>
   <!-- Div not using JSON stringify -->
   <h4>Example of altering innerHTML without using JSON.stringify</h4>
   <div id="userDiv1"></div>
+
   <hr>
+
   <!-- Div using JSON stringify -->
   <h4>Example of altering innerHTML with JSON.stringify</h4>
   <div id="userDiv2"></div>
+
   <hr>
+
+  <!-- Div using Bootstrap Card -->
   <h4>Example of altering innerHTML with JSON.stringify & Adding Bootstrap</h4>
   <div id="userDiv3"></div>
+
+  <hr>
+  
+  <!-- Array of User Objects -->
+  <h4>An example of an array of objects:</h4>
+  <div id="userDiv4"></div>
 
 
   <!-- Bootstrap Script Tags / CDNs -->
@@ -101,6 +113,50 @@
       </div>
     </div>
     `
+
+    // an array of user objects
+    let users = [
+      {
+        name: 'John Doe',
+        email: 'johndoe@gmail.com',
+        username: 'johndoe',
+        password: 'password1234'
+      },
+      {
+        name: 'Jane Doe',
+        email: 'janedoe@email.com',
+        username: 'janedoe',
+        password: 'password4321'
+      },
+      {
+        name: 'Mary Doe',
+        email: 'marydoe@email.com',
+        username: 'marydoe',
+        password: 'password43210'
+      }
+    ]
+
+    // take objects array above and make cards
+    for (let i = 0; i < users.length; i++) {
+      // console.log(users[i])
+
+      // create an element
+      let userElem = document.createElement('div')
+      // get details below from bootstrap
+      userElem.style.maxWidth = '18rem'
+      userElem.className = 'card text-white bg-info mb-3'
+      userElem.innerHTML = `
+       <div class="card-header"> Username: ${users[i].username}</div>
+        <div class="card-body">
+          <h5 class="card-title">Name: ${users[i].name}</h5>
+          <p class="card-text">Email: ${users[i].email}</p>
+          <p class="card-text">Password: ${users[i].password}</p>
+        </div>
+      `
+      //grab userDiv and append new element
+      document.getElementById('userDiv4').append(userElem)
+    }
+
 
   </script>
 
