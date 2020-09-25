@@ -1,5 +1,4 @@
 // ==== FUNCTIONS FOR LOCAL STORAGE ==== //
-
 // make button clickable
 document.getElementById('signUp').addEventListener('click', (event) => {
   event.preventDefault()
@@ -13,7 +12,6 @@ document.getElementById('signUp').addEventListener('click', (event) => {
   // stringify turns object into string so it can be stored in string
   localStorage.setItem('user', JSON.stringify(user))
 })
-
 // to display user
 if (localStorage.getItem('user')) {
   // create new object to get information from local storage to display on inner HTML
