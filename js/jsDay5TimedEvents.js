@@ -2,15 +2,17 @@
 let hi = setInterval(() => {
   console.log('hi')
 }, 500)
+
 document.getElementById('hiTicker').addEventListener('click', () => {
   clearTimeout(hi)
 })
+
 // random number generator 0 - 100
-let randomNumberGen = setInterval(() => {
+let ranNum = setInterval(() => {
   console.log(Math.floor(Math.random() * 100))
 }, 500)
 document.getElementById('stopGenerator').addEventListener('click', () => {
-  clearTimeout(randomNumberGen)
+  clearTimeout(ranNum)
 })
 
 
